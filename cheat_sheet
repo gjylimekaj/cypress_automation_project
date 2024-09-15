@@ -1,0 +1,7 @@
+first when you want to start with cypress you need to install Node js
+Then you add the path of nodejs to environment variables to use npm command globally from the terminal.
+open your project directory in Visual Studio Code terminal and run the following command to install Cypress:: npm install cypress --save-dev
+this installs Cypress locally for your project and adds it to your node_modules.
+the command to open cypress is: ./node_modules/.bin/cypress open or npx cypress open
+cypress configuration: 
+in the cypress.config.js file, you specify the folder where your test files are located: specPattern: 'cypress/integration/examples/*.js'
