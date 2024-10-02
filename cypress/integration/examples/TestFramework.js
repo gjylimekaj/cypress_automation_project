@@ -23,9 +23,26 @@ describe('Hooks Function',()=>{
             cy.selectProduct(element)
         });
         productPage.checkoutButton()
+        // var sum = 0
+        // cy.get('tr td:nth-child(4) strong').each(($el,index,$list) =>{
+        //     const amount = $el.text()
+        //     var result = amount.split(" ")
+        //     result = result[1].trim()
+        //     sum = Number(sum)+Number(result)
+        // }).then(function(){
+        //     cy.log(sum)
+        // })
+        productPage.sumOfProducts()
+        productPage.totalSum()
+        // cy.get('h3 strong').then(function(element){
+        //     element.text()
+        //     const amount = element.text()
+        //     var result = amount.split(" ")
+        //     var total = result[1].trim()
+        //     expect(Number(total)).to.equal(sum)
+        // })
         productPage.checkoutSuccessButton()
         productPage.locationCountry()
-        cy.wait(2000)
         productPage.selectCountry()
         productPage.agreeConditions()
         productPage.purchaseButton()
