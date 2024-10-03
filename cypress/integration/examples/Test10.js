@@ -6,7 +6,7 @@ describe('calendar test',function(){
         const date = "17"
         const year = "2027"
         const expectedList = [monthNumb,date,year]
-        cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')
+        cy.visit(Cypress.env("url")+'/seleniumPractise/#/')
         cy.get("a[href*='offers']").invoke('removeAttr', 'target').click()
         cy.get('.react-date-picker__calendar-button').click()
         cy.get('.react-calendar__navigation__label').click()

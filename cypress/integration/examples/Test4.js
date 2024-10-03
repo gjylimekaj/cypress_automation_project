@@ -2,7 +2,7 @@
 
 describe('My fourth test',function(){
     it('Handle Alerts',function(){
-        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+        cy.visit(Cypress.env('url')+'/AutomationPractice/')
         cy.get('#alertbtn').click()   
         cy.get('[value="Confirm"]').click()
         cy.on('window:alert',(str)=>

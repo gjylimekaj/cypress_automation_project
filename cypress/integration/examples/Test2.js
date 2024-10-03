@@ -2,7 +2,7 @@
 
 describe('My second test suite', function(){
     it('My second test case', function(){
-        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+        cy.visit(Cypress.env('url')+"/seleniumPractise/#/");
         cy.get('.search-keyword').type('ca')
         cy.get('.products').as('productLocator')
         //$el: The current element being processed in the collection. This is a wrapped jQuery object, so you can use jQuery methods on it.

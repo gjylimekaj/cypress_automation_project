@@ -2,7 +2,7 @@
 
 describe('Web Table Example',()=>{
     it('should handle web tables',()=>{
-        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+        cy.visit(Cypress.env('url')+'/AutomationPractice/')
         cy.get('.table-display tr td:nth-child(2)').each(($el,index,$list)=>{
             const text = $el.text()
             if(text.includes('Python'))

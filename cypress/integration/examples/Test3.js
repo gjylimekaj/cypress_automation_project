@@ -2,7 +2,7 @@
 
 describe('My third test case', function(){
     it('Describes radio buttons, check boxes...',function(){
-        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+        cy.visit(Cypress.env('url')+'/AutomationPractice/')
         //Check Boxes
         cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1')
         cy.get('#checkBoxOption1').uncheck().should('not.be.checked')
