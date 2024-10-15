@@ -17,7 +17,7 @@ When('I add items to Cart',function(){
     productPage.checkoutButton()
 })
 
-Then('Validate the total prices',()=>
+When('Validate the total prices',()=>
 {
     productPage.sumOfProducts()
     productPage.totalSum()
