@@ -20,19 +20,24 @@ async function setupNodeEvents(on, config) {
   return config;
 
 }
-
 module.exports = defineConfig({
-  //reporter : 'cypress-mochawesome-reporter',
+  // reporter: 'cypress-mochawesome-reporter',
   defaultCommandTimeout: 6000,
-  env: 
-  {
-    url : "https://rahulshettyacademy.com"
+  env: {
+    url: "https://rahulshettyacademy.com"
   },
   e2e: {
     setupNodeEvents,
-    specPattern: 'cypress/integration/examples/*.js'
-    //specPattern: 'cypress/integration/examples/BDD/*.feature'
+    specPattern: 'cypress/integration/examples/*.js' // Added comma
+    // specPattern: 'cypress/integration/examples/BDD/*.feature'
   },
+  // If "module" is an intended setting, it should be placed within a relevant configuration object, like parserOptions:
+  parserOptions: {
+    sourceType: "module",
+    module: true
+  }
 });
+
+
 
 //messages -> json file -> html

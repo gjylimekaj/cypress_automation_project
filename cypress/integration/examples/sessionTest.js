@@ -1,11 +1,13 @@
 /// <reference types="cypress" />
-const neatCSV = require('csv-parse')
-//import neatCSV from 'neat-csv';
+//import { parse } from 'csv-parse';
+//const neatCSV = require('neat-csv')
+import neatCSV from 'neat-csv';
 
+let productName
 
 describe('My JWT session test', ()=>{
 
-    it('is logged in through local storage', async()=>{
+    it('is logged in through local storage',async()=>{
         cy.LoginAPI().then(function(){
             cy.visit('https://rahulshettyacademy.com/client',
                 {
@@ -15,7 +17,9 @@ describe('My JWT session test', ()=>{
                     }
                 })
         })
-
+        cy.get('.card-body b').eq(0).then(function(ele){
+            productName = ele.text()
+        })
         cy.get('.card-body button:last-of-type').eq(0).click()
         cy.get('[routerlink*="cart"]').click()
         cy.contains("Checkout").click()
@@ -29,6 +33,7 @@ describe('My JWT session test', ()=>{
         cy.wait(2000)
         cy.get('.btn.btn-primary.mt-3.mb-3').first().click(); 
         cy.wait(2000)
+        //THIS IS THE CODE WHEN IAM USING NEAT-CSV
     //cy.readFile(Cypress.config("fileServerFolder")+"cypress/downloads/order-invoice_gjylimekaj1.csv")
     cy.readFile('C:/Users/gjyli/vscode-projects/cypress_automation_project/cypress/downloads/order-invoice_gjylimekaj1.csv')
     .then(async(text)=>{
